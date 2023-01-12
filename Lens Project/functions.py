@@ -72,5 +72,3 @@ def thick_lens_power(power, base_curve, center_thick):
     power_at_s2 = 1/(base_focal - center_thick)
     back_surface = power - power_at_s2
     return back_surface
-
-print(thick_lens_power(-10.00, +0.50, 1.1))
