@@ -1,3 +1,4 @@
-LensProject/.venv
-LensProject/.vscode
-LensProject/__pycache__
+LensProject/.venv/**
+LensProject/.vscode/**
+LensProject/__pycache__/**
+LensProject/app/__pycache__/**
