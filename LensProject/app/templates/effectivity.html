@@ -4,13 +4,13 @@ Lens Effectivity Calculation
 {% endblock %}
 {% block content %}
 <h1>Effectivity Calculation</h1>
-<div class="form_container">
-    <form action="/effectivity" method="POST">
-        Sph:<input type="number" id="sphere" step="0.25" placeholder="0.00" name="sphere" required/>
-        Cyl:<input type="number" step="0.25" name="cyl" id="cyl" placeholder="-0.00" required/>
-        Axis:<input type="number" name="axis" id="axis" placeholder="180" min="1" max="180" required/>
-        Testing BVD:<input type="number" name="test_bvd" id="test_bvd" placeholder="12" required/>
-        Compensated BVD:<input type="number" name="fit_bvd" id="fit_bvd" placeholder="12" required/>
+<div>
+    <form class="form_container" action="/effectivity" method="POST">
+        <label for="sphere">Sph:<input type="number" id="sphere" step="0.25" placeholder="0.00" name="sphere" required/></label>
+        <label for="cyl">Cyl:<input type="number" step="0.25" name="cyl" id="cyl" placeholder="-0.00"/></label>
+        <label for="axis">Axis:<input type="number" name="axis" id="axis" placeholder="180" min="1" max="180"/></label>
+        <label for="test_bvd">Testing BVD:<input type="number" name="test_bvd" id="test_bvd" placeholder="12" required/></label>
+        <label for="fit_bvd">Compensated BVD:<input type="number" name="fit_bvd" id="fit_bvd" placeholder="12" required/></label>
         <input type="submit" value="submit" />
     </form>
 </div>

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}
+Input
+{% endblock %}
+{% block content %}
+<form action="data" method="post">
+    <input type="text" name="text" id="txt"/>
+    <input type="checkbox" name="chbx" id="chbx1"/>
+    <input type="checkbox" name="chbx" id="chbx2"/>
+    <input type="radio" name="radio" id="rdo1"/>
+    <input type="radio" name="radio" id="rdo2"/>
+    <input type="date" name="date" id="dt"/>
+    <input type="email" name="email" id="mail"/>
+    <input type="number" name="number" id="nmbr"/>
+    <select name="index" id="n">
+        <option value="1.498">1.5</option>
+        <option value="1.6">1.6</option>
+        <option value="1.67">1.67</option>
+        <option value="1.74">1.74</option>
+    </select>
+    <input type="submit" value="submit"/>
+</form>
+{% endblock %}

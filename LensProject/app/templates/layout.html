@@ -4,6 +4,8 @@
         <meta charset="utf-8" />
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
     </head>
 
     <body>
@@ -12,6 +14,10 @@
             <a href="{{ url_for('about') }}" class="navbar-item">About</a>
             <a href="{{ url_for('contact') }}" class="navbar-item">Contact</a>
             <a href="{{ url_for('effectivity') }}" class="navbar-item">Effectivity</a>
+            <a href="{{ url_for('lensthickness') }}" class="navbar-item">Lens Thickess</a>
+            <a href="{{ url_for('blanksize') }}" class="navbar-item">Blank Size</a>
+            <a href="{{ url_for('prism') }}" class="navbar-item">Prism</a>
+        
         </div>
 
         <div class="body-content">
