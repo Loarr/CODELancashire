@@ -33,14 +33,8 @@ def get_data():
     return app.send_static_file("data.json")
 
 
-@app.route('/effectivity')
+@app.route('/effectivity', methods =['POST', 'GET'])
 def effectivity():
-    return render_template('effectivity.html')
-
-@app.route('/data/', methods =['POST', 'GET'])
-def data():
-    if request.method == 'GET':
-        return f"The URL /data is accessed directly. Try going to '/effectivity' to submit form"
     if request.method == 'POST':
         form_data = request.form
         sphere = float(form_data['sphere'])
@@ -49,4 +43,13 @@ def data():
         test_bvd = float(form_data['test_bvd'])
         fit_bvd = float(form_data['fit_bvd'])
         comp_power = functions.compensated_power(sphere, test_bvd, fit_bvd, cyl)
-        return render_template('data.html',form_data = form_data, comp_power = comp_power)
+        return render_template('effectivity.html',form_data = form_data, comp_power = comp_power)
+    if request.method == 'GET':
+        comp_power = [0, 0]
+        return render_template('effectivity.html', comp_power = comp_power)
+    
+
+@app.route('/data/', methods =['POST', 'GET'])
+def data():
+   
+        return f"The URL /data is accessed directly. Try going to '/effectivity' to submit form"
