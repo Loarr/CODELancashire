@@ -61,7 +61,8 @@ def compensated_power(power, test_bvd, fit_bvd, cyl = 0):
     if cyl != 0:
         power2 = power + cyl  
         comp_power2 = power2/(1-(diff*power2))
-        comp_cyl = comp_power - comp_power2    
+        comp_cyl = round(comp_power - comp_power2, 2)
+        comp_power = round(comp_power, 2)    
         return comp_power, comp_cyl
     else:
         return comp_power
