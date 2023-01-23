@@ -1,6 +1,14 @@
 {% extends "layout.html" %}
 {% block title %}
-
+Blank Sizing Calculator
 {% endblock %}
 {% block content %}
+<div>
+    <form class="form_container6" action="/blanksize" method="POST">
+        <label for="a_meas">A:<input type="number" name="a_meas" id=""></label>
+        <label for="dbl_meas">DBL:<input type="number" name="dbl_meas" id=""></label>
+        <label for="ed_meas">ED:<input type="number" name="ed_meas" id=""></label>
+        <label for="pd_meas">PD:<input type="number" name="pd_meas" id=""></label>
+    </form>
+</div>
 {% endblock %}

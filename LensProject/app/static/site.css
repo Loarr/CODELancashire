@@ -30,7 +30,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.form_container{
+.form_container6{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+}
+
+.form_container5{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }

@@ -5,7 +5,7 @@ Lens Effectivity Calculation
 {% block content %}
 <h1>Effectivity Calculation</h1>
 <div>
-    <form class="form_container" action="/effectivity" method="POST">
+    <form class="form_container6" action="/effectivity" method="POST">
         <label for="sphere">Sph:<input type="number" id="sphere" step="0.25" placeholder="0.00" name="sphere" required/></label>
         <label for="cyl">Cyl:<input type="number" step="0.25" name="cyl" id="cyl" placeholder="-0.00"/></label>
         <label for="axis">Axis:<input type="number" name="axis" id="axis" placeholder="180" min="1" max="180"/></label>
@@ -17,9 +17,12 @@ Lens Effectivity Calculation
 <hr />
 
 <h1>Compensated Sphere</h1>
-<p>{{ comp_power[0] }}</p>
+<p>{{ comp_power[0] }}D</p>
 
 <h1>Compensated Cyl</h1>
-<p>{{ comp_power[1] }}</p>
+<p>{{ comp_power[1] }}D</p>
+
+<h1>Axis</h1>
+<p>{{ axis }}</p>
 
 {% endblock %}

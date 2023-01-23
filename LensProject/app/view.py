@@ -20,9 +20,14 @@ def contact():
 
 @app.route('/effectivity', methods =['POST', 'GET'])
 def effectivity():
+    
+    if request.method == 'GET':
+        comp_power = [0, 0]
+        axis = 0
+        return render_template('effectivity.html', comp_power = comp_power)
+
     if request.method == 'POST':
         form_data = request.form
-        print(form_data)
         sphere = float(form_data['sphere'])
         test_bvd = float(form_data['test_bvd'])
         fit_bvd = float(form_data['fit_bvd'])
@@ -38,17 +43,20 @@ def effectivity():
             comp_power = [functions.compensated_power(sphere, test_bvd, fit_bvd, cyl), 0]
             return render_template('effectivity.html',form_data = form_data, comp_power = comp_power)
 
-    if request.method == 'GET':
-        comp_power = [0, 0]
-        return render_template('effectivity.html', comp_power = comp_power)
-
 @app.route('/lensthickness', methods = ["POST", "GET"])
 def lensthickness():
     if request.method == "GET":
         return render_template("lensthickness.html")
     if request.method == "POST":
-        functions.lens_thickness()
-        return render_template("lensthickness.html")
+        form_data = request.form
+        print(form_data)
+        front = float(form_data['front'])
+        back = float(form_data['back'])
+        blank = float(form_data['blank'])
+        index = float(form_data['index'])
+        thick = float(form_data['thick'])
+        thickness = functions.lens_thickness(front,blank,back,index,thick)
+        return render_template("lensthickness.html", thickness = thickness)
     
 @app.route("/blanksize", methods = ["POST", "GET"])
 def blanksize():
