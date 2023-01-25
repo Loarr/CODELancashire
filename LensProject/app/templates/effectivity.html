@@ -15,14 +15,15 @@ Lens Effectivity Calculation
     </form>
 </div>
 <hr />
-
+{% if comp_power != None %}
 <h1>Compensated Sphere</h1>
 <p>{{ comp_power[0] }}D</p>
-
+{% endif %}
+{% if comp_power != None and comp_power[1] != 0 %}
 <h1>Compensated Cyl</h1>
 <p>{{ comp_power[1] }}D</p>
 
 <h1>Axis</h1>
 <p>{{ axis }}</p>
-
+{% endif %}
 {% endblock %}

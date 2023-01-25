@@ -5,19 +5,21 @@ Lens Thickness Calculator
 {% block content %}
 <div>
     <form class="form_container6" action="/lensthickness" method="POST">
-        <label for="fromt">Front Surface Power:<input type="number" step = "0.25" name="front" id=""/></label>
-        <label for="back">Back Surface Power <input type="number" name="back" step = "0.25" id=""/></label>
-        <label for="blank">Blank Size <input type="number" name="blank" step = "1" id=""/></label>
-        <label for="index">Lens Index<select name="index" id="">
+        <label for="fromt">Front Surface Power:<input type="number" step = "0.25" name="front" id="" required/></label>
+        <label for="back">Back Surface Power <input type="number" name="back" step = "0.25" id="" required/></label>
+        <label for="blank">Blank Size <input type="number" name="blank" step = "1" id="" required/></label>
+        <label for="index">Lens Index<select name="index" id="" required>
             <option value="1.498">1.5</option>
             <option value="1.6">1.6</option>
             <option value="1.67">1.67</option>
             <option value="1.74">1.74</option>
         </select></label>
-        <label for="thick">Minimum Centre/Edge Thickness <input type="number" step="0.1" name="thick" id=""/></label>
+        <label for="thick">Minimum Centre/Edge Thickness <input type="number" step="0.1" name="thick" id="" required/></label>
         <input type="submit" value="submit"/>
     </form>
 </div>
+{% if thickness != NaN %}
 <h1>Lens Thickness</h1>
 <p>{{ thickness }}mm</p>
+{% endif %}
 {% endblock %}

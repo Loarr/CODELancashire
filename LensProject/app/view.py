@@ -6,6 +6,8 @@ from . import app
 
 from . import functions
 
+import matplotlib as mpl
+
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -22,7 +24,7 @@ def contact():
 def effectivity():
     
     if request.method == 'GET':
-        comp_power = [0, 0]
+        comp_power = None
         axis = 0
         return render_template('effectivity.html', comp_power = comp_power)
 
@@ -49,7 +51,6 @@ def lensthickness():
         return render_template("lensthickness.html")
     if request.method == "POST":
         form_data = request.form
-        print(form_data)
         front = float(form_data['front'])
         back = float(form_data['back'])
         blank = float(form_data['blank'])
